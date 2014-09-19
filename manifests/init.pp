@@ -10,9 +10,6 @@
 #   [*passenger_ruby*]
 #     The path to ruby on your system
 #
-#   [*gem_path*]
-#     The path to rubygems on your system
-#
 #   [*gem_binary_path*]
 #     Path to Rubygems binaries on your system
 #
@@ -33,7 +30,6 @@
 #  class { 'passenger':
 #    passenger_version      => '3.0.21',
 #    passenger_ruby         => '/usr/bin/ruby'
-#    gem_path               => '/var/lib/gems/1.8/gems',
 #    gem_binary_path        => '/var/lib/gems/1.8/bin',
 #    passenger_root         => '/var/lib/gems/1.8/gems/passenger-3.0.21'
 #    mod_passenger_location => '/var/lib/gems/1.8/gems/passenger-3.0.21/ext/apache2/mod_passenger.so',
@@ -48,7 +44,6 @@
 #
 class passenger (
   $gem_binary_path        = $passenger::params::gem_binary_path,
-  $gem_path               = $passenger::params::gem_path,
   $mod_passenger_location = $passenger::params::mod_passenger_location,
   $package_name           = $passenger::params::package_name,
   $package_ensure         = $passenger::params::package_ensure,
