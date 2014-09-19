@@ -4,10 +4,10 @@
 
 	# you probably want to tune these settings
 	PassengerHighPerformance on
-	PassengerMaxPoolSize 12
-	PassengerPoolIdleTime 1500
-	# PassengerMaxRequests 1000
-	PassengerStatThrottleRate 120
+	PassengerMaxPoolSize <%= @passenger_max_pool_size %>
+	PassengerMinInstances <%= @passenger_min_instances %>
+	PassengerPoolIdleTime <%= @passenger_pool_idle_time %>
+	PassengerStatThrottleRate <%= @passenger_stat_throttle_rate %>
 <% if @passenger_version =~ /^4\.\d+\.\d+/ %>
 	PassengerEnabled on
 <% else -%>

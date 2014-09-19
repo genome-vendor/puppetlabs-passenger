@@ -11,14 +11,18 @@
 # Sample Usage:
 #
 class passenger::params {
-  $package_ensure     = '3.0.21'
-  $passenger_version  = '3.0.21'
-  $passenger_ruby     = '/usr/bin/ruby'
-  $package_provider   = 'gem'
-  $passenger_provider = 'gem'
-  $install_with_rbenv = 'false'
-  $rbenv_user         = ''
-  $rbenv_version      = ''
+  $package_ensure               = '3.0.21'
+  $passenger_version            = '3.0.21'
+  $passenger_ruby               = '/usr/bin/ruby'
+  $package_provider             = 'gem'
+  $passenger_provider           = 'gem'
+  $install_with_rbenv           = 'false'
+  $rbenv_user                   = ''
+  $rbenv_version                = ''
+  $passenger_max_pool_size      = '10'
+  $passenger_min_instances      = '10'
+  $passenger_pool_idle_time     = '1500'
+  $passenger_stat_throttle_rate = '120'
 
   if versioncmp ($passenger_version, '4.0.0') > 0 {
     $builddir     = 'buildout'

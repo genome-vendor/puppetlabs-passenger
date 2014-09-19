@@ -33,6 +33,18 @@
 #
 #   [*rbenv_version*]
 #     The version of ruby under the rbenv envrionment that you'd like passenger installed into
+#
+#   [*passenger_max_pool_size*]
+#     Value for PassengerMaxPoolSize in the passenger config
+#
+#   [*passenger_min_instances*]
+#     Value for PassengerMinInstances in the passenger config
+#
+#   [*passenger_pool_idle_time*]
+#     Value for PassengerPoolIdleTime in the passenger config
+#
+#   [*passenger_stat_throttle_rate*]
+#     Value for PassengerStatThrottleRate in the passenger config
 # Usage:
 #
 #  class { 'passenger':
