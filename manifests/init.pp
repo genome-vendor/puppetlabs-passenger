@@ -25,6 +25,14 @@
 #   [*passenger_package*]
 #     The name of the Passenger package
 #
+#   [*install_with_rbenv*]
+#     Set to 'true' if you're using rbenv and you'd like passenger installed with rbenv::gem
+#
+#   [*rbenv_user*]
+#     The name of the user's envrionment who's rbenv you'd like to use
+#
+#   [*rbenv_version*]
+#     The version of ruby under the rbenv envrionment that you'd like passenger installed into
 # Usage:
 #
 #  class { 'passenger':
@@ -33,8 +41,9 @@
 #    gem_binary_path        => '/var/lib/gems/1.8/bin',
 #    passenger_root         => '/var/lib/gems/1.8/gems/passenger-3.0.21'
 #    mod_passenger_location => '/var/lib/gems/1.8/gems/passenger-3.0.21/ext/apache2/mod_passenger.so',
-#    passenger_provider     => 'gem',
-#    passenger_package      => 'passenger',
+#    install_with_rbenv     => 'true',
+#    rbenv_user             => 'www-data',
+#    rbenv_version          => '2.1.3',
 #  }
 #
 #
@@ -53,6 +62,9 @@ class passenger (
   $passenger_root         = $passenger::params::passenger_root,
   $passenger_ruby         = $passenger::params::passenger_ruby,
   $passenger_version      = $passenger::params::passenger_version,
+  $install_with_rbenv     = $passenger::params::install_with_rbenv,
+  $rbenv_user             = $passenger::params::rbenv_user,
+  $rbenv_version          = $passenger::params::rbenv_version,
 ) inherits passenger::params {
 
   include '::apache'

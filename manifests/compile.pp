@@ -1,11 +1,11 @@
 class passenger::compile {
 
-  exec {'compile-passenger':
-    path      => [ $passenger::gem_binary_path, '/usr/bin', '/bin', '/usr/local/bin' ],
+  exec { 'compile-passenger':
     command   => 'passenger-install-apache2-module -a',
-    logoutput => on_failure,
+    path      => [$passenger::gem_binary_path, dirname($passenger::passenger_ruby), "/usr/bin", "/bin"],
     creates   => $passenger::mod_passenger_location,
-    timeout   => 0,
+    require   => [Package[$passenger::package_dependencies]],
+    logoutput => on_failure,
   }
 
 }
