@@ -60,8 +60,7 @@
 #
 #
 # Requires:
-#   - apache
-#   - apache::dev
+#   - apache2
 #
 class passenger (
   $gem_binary_path        = $passenger::params::gem_binary_path,
@@ -79,8 +78,7 @@ class passenger (
   $rbenv_version          = $passenger::params::rbenv_version,
 ) inherits passenger::params {
 
-  include '::apache'
-  include '::apache::dev'
+  include apache2
 
   include '::passenger::install'
   include '::passenger::config'
@@ -91,7 +89,7 @@ class passenger (
 
   #projects.puppetlabs.com - bug - #8040: Anchoring pattern
   Anchor['passenger::begin'] ->
-  Class['apache::dev'] ->
+  Class['apache2'] ->
   Class['passenger::install'] ->
   Class['passenger::compile'] ->
   Class['passenger::config'] ->

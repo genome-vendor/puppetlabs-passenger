@@ -40,13 +40,13 @@ class passenger::params {
 
       # Ubuntu does not have libopenssl-ruby - it's packaged in libruby
       if $::lsbdistid == 'Debian' and $::lsbmajdistrelease <= 5 {
-        $package_dependencies   = [ 'libopenssl-ruby', 'libcurl4-openssl-dev' ]
+        $package_dependencies   = [ 'libopenssl-ruby', 'libcurl4-openssl-dev', 'libaprutil1-dev', 'libapr1-dev', 'apache2-prefork-dev' ]
       } else {
-        $package_dependencies   = [ 'libruby', 'libcurl4-openssl-dev' ]
+        $package_dependencies   = [ 'libruby', 'libcurl4-openssl-dev', 'libaprutil1-dev', 'libapr1-dev', 'apache2-prefork-dev' ]
       }
     }
     'redhat': {
-      $package_dependencies   = [ 'libcurl-devel', 'openssl-devel', 'zlib-devel' ]
+      $package_dependencies   = [ 'libcurl-devel', 'openssl-devel', 'zlib-devel', 'httpd-devel' ]
       $package_name           = 'passenger'
       $passenger_package      = 'passenger'
       $gem_binary_path        = '/usr/lib/ruby/gems/1.8/gems/bin'
