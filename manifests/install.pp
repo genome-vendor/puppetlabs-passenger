@@ -1,6 +1,6 @@
 class passenger::install {
 
-  if $passenger::install_with_rbenv == 'true' {
+  if $passenger::install_with_rbenv {
    rbenv::gem { "passenger":
       user   => $passenger::rbenv_user,
       ruby   => $passenger::rbenv_version,

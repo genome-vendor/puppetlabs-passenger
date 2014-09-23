@@ -26,7 +26,7 @@
 #     The name of the Passenger package
 #
 #   [*install_with_rbenv*]
-#     Set to 'true' if you're using rbenv and you'd like passenger installed with rbenv::gem
+#     Set to true if you're using rbenv and you'd like passenger installed with rbenv::gem
 #
 #   [*rbenv_user*]
 #     The name of the user's envrionment who's rbenv you'd like to use
@@ -53,7 +53,7 @@
 #    gem_binary_path        => '/var/lib/gems/1.8/bin',
 #    passenger_root         => '/var/lib/gems/1.8/gems/passenger-3.0.21'
 #    mod_passenger_location => '/var/lib/gems/1.8/gems/passenger-3.0.21/ext/apache2/mod_passenger.so',
-#    install_with_rbenv     => 'true',
+#    install_with_rbenv     => true,
 #    rbenv_user             => 'www-data',
 #    rbenv_version          => '2.1.3',
 #  }

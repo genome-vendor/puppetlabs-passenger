@@ -16,7 +16,7 @@ class passenger::params {
   $passenger_ruby               = '/usr/bin/ruby'
   $package_provider             = 'gem'
   $passenger_provider           = 'gem'
-  $install_with_rbenv           = 'false'
+  $install_with_rbenv           = false
   $rbenv_user                   = ''
   $rbenv_version                = ''
   $passenger_max_pool_size      = '10'
